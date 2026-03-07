@@ -1,0 +1,79 @@
+@media (max-width: 1040px) {
+    /* Navbar Adjustment */
+    .nav-bar-container {
+        justify-content: flex-end;
+        padding: 15px 20px;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .hamburger-btn {
+        display: flex;
+        z-index: 20;
+        position: relative;
+    }
+
+    .menu-checkbox {
+        display: block; /* Para existir na dom e captar o toque */
+        position: absolute;
+        top: 23px; /* Alinhar junto do padding do hamburger */
+        right: 28px; 
+        width: 41px;
+        height: 34px;
+        z-index: 30; /* Fica acima de TUDO no mobile */
+        opacity: 0; /* Torna ele invisível, mas fisicamente lá para clique */
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -50%;
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.9);
+        height: 100vh;
+        justify-content: flex-start !important;
+        align-items: flex-start;
+        padding-top: 80px;
+        padding-left: 20px;
+        z-index: 15;
+        transition: right 0.4s ease-in-out;
+    }
+
+    .menu-checkbox:checked ~ .nav-links {
+        right: 0;
+    }
+
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    .nav-bar-container ul li {
+        margin: 15px 0;
+        margin-right: 0;
+        font-size: 1.5rem;
+    }
+
+    /* Showcase Adjustment */
+    .showcase-container h1 {
+        font-size: 48px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .showcase-container p {
+        font-size: 16px;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
