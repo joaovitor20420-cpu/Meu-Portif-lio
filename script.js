@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingSpan = document.querySelector(".typewriter");
   if (typingSpan) {
     const textArray = [
-      "A professional web developer",
-      "A creative coder",
-      "Always learning new tech",
+      "Desenvolvedor Web",
+      "Criador de Experiências Digitais",
+      "Sempre aprendendo novas tecnologias",
     ];
     let textIndex = 0;
     let charIndex = 0;
