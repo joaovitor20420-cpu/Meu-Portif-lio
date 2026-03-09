@@ -20,26 +20,25 @@
             <span></span>
         </label>
         <ul class="nav-links">
-            <li><a>Início</a></li>
-            <li><a>Sobre mim</a></li>
-            <li><a>Habilidades</a></li>
-            <li><a>Projetos</a></li>
-            <li><a>Contato</a></li>
+            <li><a href="#home" class="nav-item">Início</a></li>
+            <li><a href="#sobre" class="nav-item">Sobre mim</a></li>
+            <li><a href="#habilidades" class="nav-item">Habilidades</a></li>
+            <li><a href="#projetos" class="nav-item">Projetos</a></li>
+            <li><a href="#contato" class="nav-item">Contato</a></li>
         </ul>
     </nav>
-    <div class="showcase-container">
-        <!--<img src="images/Gemini_Generated_Image_9ablg39ablg39abl.png" 
-        alt="João Vitor">-->
+    <div id="home" class="showcase-container">
+        
         <h1>
             Oi, eu sou João Vitor!
         </h1>
-        <p>
-            A professional web developer
+        <p class="typing-text">
+            <span class="typewriter"></span>
         </p>
     </div>
     
-    <div class="section-container">
-        <div class="section-content">
+    <div id="sobre" class="section-container">
+        <div class="section-content hidden">
             <h2 class="section-title">Sobre mim</h2>
             <div class="about-me-container">
                 <div class="about-me-image">
@@ -53,8 +52,8 @@
             </div>
         </div>
     </div>
-    <div class="section-container">
-        <div class="section-content">
+    <div id="habilidades" class="section-container">
+        <div class="section-content hidden">
             <h2 class="section-title">Habilidades</h2>
                 <div class="skills-container">
                     <div class="skill-item">
@@ -77,6 +76,8 @@
             </div>
         </div>
     </div>
+    
+    <script src="script.js" defer></script>
 </body>
 </html>
 

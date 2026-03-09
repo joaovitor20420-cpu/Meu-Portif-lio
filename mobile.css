@@ -76,4 +76,50 @@
         text-align: center;
         padding: 0 20px;
     }
+
+    .showcase-avatar {
+        height: 40vh;
+        margin-top: 60px;
+    }
+
+    /* Sections Adjustment (Stacking Vertically) */
+    .about-me-container {
+        flex-direction: column;
+
+    }
+
+    .section-title {
+        justify-self: flex-start;
+        margin-bottom: 60px;
+    }
+    
+    .about-me-image img {
+        margin-right: 0;
+        margin-bottom: 30px;
+        width: 320px;
+        height: 320px;
+    }
+
+    .about-me-text {
+        width: 90%;
+        text-align: center;
+        padding: 30px;
+        border-left: none;
+        border-top: 4px solid #00ffcc;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .skills-container .skill-item {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .skills-container .skill-item:nth-child(2) {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
