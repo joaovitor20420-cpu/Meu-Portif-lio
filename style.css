@@ -16,6 +16,7 @@
  position: absolute;
  top: 0;
  z-index: 10;
+ background-attachment: fixed;
 }
 .nav-bar-container ul {
     display: flex;
@@ -78,6 +79,7 @@
     flex-direction: column;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
     background-image: url(images/Gemini_Generated_Image_9ablg39ablg39abl.png);
@@ -108,8 +110,100 @@
     animation: slideUp 2s ease-out 1s forwards;
 }
 
+/*Ultilitarios*/
+.section-container{
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: #111;
+}
+
+.section-content{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.section-title {
+    font-weight: 600;
+    font-size: 3rem;
+    letter-spacing: 0.15rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-bottom: 1.5px solid #ffffff;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+}
+
+.about-me-container{
+    display: flex;
+    align-items: center;
+}
+
+.about-me-image img{
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    margin-right: 50px;
+}
 
 
+.about-me-text p{
+    color: #ffffff;
+    line-height: 2rem;
+}
+
+.skills-container{
+    margin-top: 108px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #202020;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+.skill-item img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.skills-container .skill-item:nth-child(2){
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.skill-item span{
+    margin-top:15px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.skill-item p{
+    color: #ffffff;
+    opacity: 50%;
+   
+}
 /*keyframes*/
 @keyframes slideInRight {
     from {
