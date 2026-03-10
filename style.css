@@ -160,11 +160,20 @@ body {
 .hidden {
     opacity: 0;
     transform: translateY(50px);
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
 }
+
+.hidden.from-left {
+    transform: translateX(-100px);
+}
+
+.hidden.from-right {
+    transform: translateX(100px);
+}
+
 .show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0) !important;
 }
 .section-container{
     position: relative;
@@ -252,6 +261,15 @@ body {
     padding: 15px 40px;
     margin-bottom: 20px;
     border-left: 2px dashed rgba(0, 255, 204, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.about-me-block:hover {
+    background: rgba(0, 255, 204, 0.05);
+    border-left: 2px solid #00ffcc;
+    transform: translateX(10px);
+    box-shadow: -5px 0 15px rgba(0, 255, 204, 0.1);
 }
 
 .about-me-block:last-of-type {
@@ -281,6 +299,11 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+/* Staggered Animations for Skills Cards */
+.skill-item:nth-child(1) { transition-delay: 0.1s; }
+.skill-item:nth-child(2) { transition-delay: 0.3s; }
+.skill-item:nth-child(3) { transition-delay: 0.5s; }
 
 .skill-item{
     display: flex;

@@ -101,11 +101,26 @@
     }
 
     .about-me-text {
-        width: 90%;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .about-me-block {
+        padding: 20px 15px;
         text-align: center;
-        padding: 30px;
         border-left: none;
-        border-top: 4px solid #00ffcc;
+        border-top: 2px dashed rgba(0, 255, 204, 0.2);
+    }
+    
+    .about-me-block p {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .about-me-block:hover {
+        border-left: none;
+        border-top: 2px solid #00ffcc;
+        transform: translateY(-5px);
     }
 
     .skills-container {
