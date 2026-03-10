@@ -235,7 +235,7 @@ body {
 }
 
 
-.about-me-text{
+.about-me-block{
     flex: 1.2;
     background: rgba(20, 20, 20, 0.8);
     backdrop-filter: blur(5px);
@@ -243,14 +243,36 @@ body {
     padding: 50px 80px; /* Aumentado padding horizontal */
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 255, 204, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.about-me-text p{
+.about-me-block {
+    padding: 15px 40px;
+    margin-bottom: 20px;
+    border-left: 2px dashed rgba(0, 255, 204, 0.2);
+}
+
+.about-me-block:last-of-type {
+    margin-bottom: 0;
+}
+
+.about-me-block p {
     color: #ffffff;
     font-size: 1.15rem;
     line-height: 2.2rem;
     text-align: justify;
     margin: 0;
+}
+
+.code-bracket {
+    display: block;
+    color: #00ffcc;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: monospace;
+    opacity: 0.8;
 }
 
 .skills-container{
