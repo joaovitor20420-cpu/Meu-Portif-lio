@@ -89,4 +89,22 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   hiddenElements.forEach((el) => observer.observe(el));
+
+  // 4. Showcase Parallax Effect
+  const showcase = document.querySelector(".showcase-container");
+  
+  if (showcase) {
+    showcase.addEventListener("mousemove", (e) => {
+      const offsetX = (e.clientX / window.innerWidth - 0.5) * 20; // Max movement 20px
+      const offsetY = (e.clientY / window.innerHeight - 0.5) * 20;
+      
+      // Move the background image position relative to center
+      showcase.style.backgroundPosition = `calc(50% + ${offsetX}px) calc(50% + ${offsetY}px)`;
+    });
+
+    // Reset when mouse leaves
+    showcase.addEventListener("mouseleave", () => {
+      showcase.style.backgroundPosition = "center";
+    });
+  }
 });

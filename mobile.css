@@ -110,6 +110,8 @@
         text-align: center;
         border-left: none;
         border-top: 2px dashed rgba(0, 255, 204, 0.2);
+        margin-left: 50px;
+        margin-right: 50px;
     }
     
     .about-me-block p {
@@ -126,6 +128,7 @@
     .skills-container {
         flex-direction: column;
         margin-top: 50px;
+        margin: 10px;
     }
 
     .skills-container .skill-item {
