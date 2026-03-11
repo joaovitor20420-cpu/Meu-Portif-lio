@@ -459,31 +459,23 @@ body {
     position: relative;
     width: 100%;
     margin-top: 50px;
-    overflow: hidden; /* Esconde os itens que passam da tela */
-    padding: 20px 0;
 }
 
-.projects-track {
+.projects-container {
     display: flex;
     gap: 30px;
     align-items: stretch;
-    width: max-content; /* Permite que a faixa cresça infinitamente para caber todos os itens */
-    animation: scrollMarquee 25s linear infinite; /* Rola constantemente */
+    overflow-x: auto;
+    padding: 20px 20px; /* Espaço para o box-shadow e o hover não cortarem */
+    
+    /* Esconde a barra de rolagem (Chrome, Safari, Opera) */
+    -ms-overflow-style: none;  /* IE / Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
-/* Pausa a animação quando o mouse estiver em cima */
-.projects-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes scrollMarquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        /* Move exatamente metade da largura total (já que duplicamos os itens 5 + 5) mais o gap */
-        transform: translateX(calc(-50% - 15px)); 
-    }
+/* Pseudo-elemento para ocultar no webkit */
+.projects-container::-webkit-scrollbar {
+    display: none;
 }
 
 .project-item {
@@ -499,12 +491,20 @@ body {
     padding: 40px;
     border-radius: 10px; /* Bordas um pouco mais retas */
     text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, border-color 0.4s ease;
     border: 1px solid rgba(150, 150, 150, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     overflow: hidden;
     position: relative;
+}
+
+.project-item:hover {
+    transform: scale(1.15) translateY(-20px); /* Aumenta bastante (15% maior) e salta para cima */
+    background: var(--glass-hover);
+    box-shadow: 0 10px 25px var(--primary-glow), 0 0 15px var(--primary-glow-strong), inset 0 0 10px var(--hover-bg);
+    border-color: var(--primary-color); /* Borda com a cor principal (Neon) */
+    z-index: 10; /* Fica acima dos outros na animação */
 }
 
 .project-item img {
