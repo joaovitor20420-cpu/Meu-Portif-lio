@@ -107,4 +107,71 @@ document.addEventListener("DOMContentLoaded", () => {
       showcase.style.backgroundPosition = "center";
     });
   }
+    // 5. Projects Carousel Logic (Infinite Netflix Style)
+    const projectsContainer = document.querySelector('.projects-container');
+    const leftBtn = document.querySelector('.left-btn');
+    const rightBtn = document.querySelector('.right-btn');
+    
+    if (projectsContainer && leftBtn && rightBtn) {
+        // Obter o tamanho do scroll baseado na largura de um item mais o gap
+        const getScrollAmount = () => {
+            const itemWidth = document.querySelector('.project-item').offsetWidth;
+            const gap = 30; // Correspondente ao gap no CSS
+            return itemWidth + gap;
+        };
+
+        const maxScrollLeft = projectsContainer.scrollWidth - projectsContainer.clientWidth;
+        let isScrolling = false;
+
+        const handleInfiniteScroll = (direction) => {
+            if(isScrolling) return;
+            isScrolling = true;
+            
+            projectsContainer.scrollBy({ left: direction * getScrollAmount(), behavior: 'smooth' });
+            
+            setTimeout(() => {
+                if (direction === 1 && projectsContainer.scrollLeft >= projectsContainer.scrollWidth - projectsContainer.clientWidth - 10) {
+                    // Chegou final da lista indo pra direita, move o primeiro pro final e 're-scrola'
+                    projectsContainer.appendChild(projectsContainer.firstElementChild);
+                    projectsContainer.scrollBy({ left: -getScrollAmount(), behavior: 'instant' });
+                } else if (direction === -1 && projectsContainer.scrollLeft <= 0) {
+                     // Chegou final da lista indo pra esquerda, move o ultimo pro inicio e 're-scrola'
+                     projectsContainer.prepend(projectsContainer.lastElementChild);
+                     projectsContainer.scrollBy({ left: getScrollAmount(), behavior: 'instant' });
+                }
+                isScrolling = false;
+            }, 400); // Wait for smooth scroll to finish
+        };
+
+
+        leftBtn.addEventListener('click', () => {
+            handleInfiniteScroll(-1);
+        });
+
+        rightBtn.addEventListener('click', () => {
+             handleInfiniteScroll(1);
+        });
+
+        // Lógica de Autoplay (Rolar sozinho)
+        let autoPlayInterval;
+
+        const startAutoPlay = () => {
+            autoPlayInterval = setInterval(() => {
+                handleInfiniteScroll(1); // Rola para a direita a cada intervalo
+            }, 3000); // 3 segundos
+        };
+
+        const stopAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+        };
+
+        // Inicia o autoplay quando a página carrega
+        startAutoPlay();
+
+        // Pausa o autoplay quando o mouse entra no carrossel
+        projectsContainer.parentElement.addEventListener('mouseenter', stopAutoPlay);
+        
+        // Retoma o autoplay quando o mouse sai do carrossel
+        projectsContainer.parentElement.addEventListener('mouseleave', startAutoPlay);
+    }
 });

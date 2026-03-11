@@ -218,7 +218,7 @@ body {
 }
 
 .section-content{
-    max-width: 1440px;
+    max-width: 1700px; /* Aumentado para explorar mais a lateral da tela */
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -257,22 +257,85 @@ body {
     justify-content: flex-start; /* Empurra a foto para a esquerda */
 }
 
-.about-me-image img{
+/* Wrapper tecnológico da imagem */
+.img-tech-wrapper {
+    position: relative;
+    display: inline-block;
     width: 450px;
     height: 450px;
+}
+
+/* Faixas tecnológicas base */
+.img-tech-wrapper::before,
+.img-tech-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px 120px 30px 120px;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Faixa diagonal Top-Left (sólida) */
+.img-tech-wrapper::before {
+    top: -20px;
+    left: -20px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+/* Faixa diagonal Bottom-Right (sólida e brilhante) */
+.img-tech-wrapper::after {
+    top: 20px;
+    left: 20px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-glow);
+    opacity: 0.6;
+}
+
+/* Animações no hover para as faixas */
+.img-tech-wrapper:hover::before {
+    border-radius: 120px 30px 120px 30px;
+    transform: rotate(-5deg) scale(1.02);
+    top: -25px;
+    left: -25px;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 25px var(--primary-glow);
+}
+
+.img-tech-wrapper:hover::after {
+    border-radius: 120px 30px 120px 30px;
+    transform: rotate(5deg) scale(1.02);
+    top: 25px;
+    left: 25px;
+    opacity: 1;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 25px var(--primary-glow-strong);
+}
+
+/* Ajustes da imagem em si */
+.img-tech-wrapper img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center top;
-    border-radius: 50%;
-    margin-right: 0;
+    border-radius: 30px 120px 30px 120px;
     border: 3px solid var(--primary-glow);
     box-shadow: 0 0 20px var(--primary-glow), 0 0 40px var(--hover-bg);
     filter: brightness(0.6) contrast(1.2);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    z-index: 2;
 }
-.about-me-image img:hover {
+
+.img-tech-wrapper:hover img {
     box-shadow: 0 0 30px var(--primary-glow-strong), 0 0 60px var(--primary-glow);
     border-color: var(--primary-color);
     filter: brightness(1) contrast(1);
+    border-radius: 120px 30px 120px 30px;
+    transform: scale(1.02);
 }
 
 
@@ -387,65 +450,83 @@ body {
    
 }
 
-/* Projects Section */
-.projects-container {
+/* Projects Section - Continuous Marquee */
+#projetos .section-content {
+    max-width: 95%; /* Projetos podem ocupar quase toda a tela lateralmente */
+}
+
+.projects-carousel-wrapper {
+    position: relative;
+    width: 100%;
     margin-top: 50px;
+    overflow: hidden; /* Esconde os itens que passam da tela */
+    padding: 20px 0;
+}
+
+.projects-track {
     display: flex;
-    justify-content: space-between;
     gap: 30px;
-    align-items: center;
+    align-items: stretch;
+    width: max-content; /* Permite que a faixa cresça infinitamente para caber todos os itens */
+    animation: scrollMarquee 25s linear infinite; /* Rola constantemente */
+}
+
+/* Pausa a animação quando o mouse estiver em cima */
+.projects-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exatamente metade da largura total (já que duplicamos os itens 5 + 5) mais o gap */
+        transform: translateX(calc(-50% - 15px)); 
+    }
 }
 
 .project-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex: 1;
+    justify-content: flex-end; /* Texto mais para baixo como em capas de filmes */
+    flex-shrink: 0; /* Impede os cartões encolherem na esteira */
+    width: 400px; /* Largura monstruosa */
+    height: 600px; /* Altura mantendo a proporção 2:3 da Netflix */
     background: var(--glass-bg);
     backdrop-filter: blur(8px);
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 10px; /* Bordas um pouco mais retas */
     text-align: center;
     transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
     border: 1px solid rgba(150, 150, 150, 0.1);
-    border-top: 1px solid rgba(150, 150, 150, 0.2);
-    border-left: 1px solid rgba(150, 150, 150, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-}
-
-.project-item:hover {
-    transform: translateY(-10px);
-    background: var(--glass-hover);
-    box-shadow: 0 15px 40px var(--primary-glow), inset 0 0 15px var(--hover-bg);
-    border-color: var(--primary-glow);
-}
-
-.project-item:nth-child(even):hover {
-    box-shadow: 0 15px 40px var(--blue-glow), inset 0 0 15px var(--hover-blue);
-    border-color: var(--blue-glow);
+    overflow: hidden;
+    position: relative;
 }
 
 .project-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-bottom: 20px;
+    width: 180px; /* Ícones escalados */
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: auto;
+    margin-top: 50px; /* Empurrado um pouco mais para o centro */
 }
 
 .project-item span {
     color: var(--text-color);
     font-weight: 600;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem; /* Títulos maiores e mais impactantes */
+    margin-bottom: 15px;
 }
 
 .project-item p {
     color: var(--text-color);
-    opacity: 70%;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    opacity: 80%;
+    font-size: 1.1rem; /* Descrições levemente mais fáceis de ler */
+    line-height: 1.6;
 }
 
 /*keyframes*/

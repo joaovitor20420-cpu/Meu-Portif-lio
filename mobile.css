@@ -65,6 +65,10 @@
     }
 
     /* Showcase Adjustment */
+    .hide-mobile {
+        display: none;
+    }
+
     .showcase-container h1 {
         font-size: 36px;
         text-align: center;
@@ -83,9 +87,14 @@
     }
 
     /* Sections Adjustment (Stacking Vertically) */
+    .section-container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        min-height: auto;
+    }
+
     .about-me-container {
         flex-direction: column;
-
     }
 
     .section-title {
@@ -94,11 +103,14 @@
         font-size: 2.2rem;
     }
     
-    .about-me-image img {
-        margin-right: 0;
-        margin-bottom: 20px;
+    .img-tech-wrapper {
         width: 250px;
         height: 250px;
+        margin-bottom: 20px;
+    }
+    .img-tech-wrapper img {
+        width: 100%;
+        height: 100%;
     }
 
     .about-me-text {
@@ -150,18 +162,18 @@
     }
 
     /* Projects Container Adjustment */
-    .projects-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Grid 2x2 */
-        gap: 15px;
+    .projects-carousel-wrapper {
         margin-top: 30px;
         padding: 0 10px;
         width: 100%;
     }
 
     .project-item {
-        width: 100%; /* Ocupa toda a célula do grid */
-        padding: 20px 10px; /* Achatando a carta */
+        flex-shrink: 0;
+        width: 220px;
+        height: 350px; /* Mantém 'em pé' no mobile de forma rígida */
+        justify-content: center;
+        padding: 20px 15px; 
     }
 
     .project-item img {

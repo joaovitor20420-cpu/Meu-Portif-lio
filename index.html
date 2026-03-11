@@ -30,7 +30,7 @@
     <div id="home" class="showcase-container">
         
         <h1>
-            &lt;Oi, eu sou João Vitor /&gt;
+            &lt;Oi, eu sou João<span class="hide-mobile"> Vitor</span> /&gt;
         </h1>
         <p class="typing-text">
             <span class="typewriter"></span>
@@ -42,7 +42,9 @@
             <h2 class="section-title hidden">Sobre mim</h2>
             <div class="about-me-container">
                 <div class="about-me-image hidden from-left">
-                    <img src="images/Gemini_Generated_Image_xqdsw2xqdsw2xqds.png" alt="João Vitor">
+                    <div class="img-tech-wrapper">
+                        <img src="images/Gemini_Generated_Image_xqdsw2xqdsw2xqds.png" alt="João Vitor">
+                    </div>
                 </div>
                 <div class="about-me-text">
                     <div class="about-me-block hidden from-right">
@@ -97,23 +99,66 @@
     <div id="projetos" class="section-container">
         <div class="section-content">
             <h2 class="section-title hidden">Projetos</h2>
-            <div class="projects-container">
-                <div class="project-item hidden">
-                    <img src="images/HTML ICON.svg" alt="HTML">
-                    <span>HTML</span>
-                    <p>Linguagem responsável por definir o esqueleto de sites. Possuo amplo domínio.</p>
+            
+            <!-- Wrapper de overflow hidden -->
+            <div class="projects-carousel-wrapper">
+                
+                <!-- Faixa móvel do marquee com o dobro de itens -->
+                <div class="projects-container projects-track">
+                    <div class="project-item hidden">
+                        <img src="images/HTML ICON.svg" alt="HTML">
+                        <span>Projeto 1</span>
+                        <p>Descrição curta do projeto focada em HTML. Construído com semântica.</p>
+                    </div>
+                    <div class="project-item hidden">
+                        <img src="images/CSS ICON.svg" alt="CSS">
+                        <span>Projeto 2</span>
+                        <p>Descrição focada em estilização com CSS, demonstração de layouts complexos.</p>
+                    </div>
+                    <div class="project-item hidden">
+                        <img src="images/JS ICON.svg" alt="JS">
+                        <span>Projeto 3</span>
+                        <p>Uma aplicação robusta de Javascript provando interatividade real-time e assíncrona.</p>
+                    </div>
+                    <div class="project-item hidden">
+                        <img src="images/HTML ICON.svg" alt="HTML">
+                        <span>Projeto 4</span>
+                        <p>Desenvolvimento focado em UX, aplicando animações e micro-interações fluidas.</p>
+                    </div>
+                    <div class="project-item hidden">
+                        <img src="images/CSS ICON.svg" alt="CSS">
+                        <span>Projeto 5</span>
+                        <p>Outro projeto incrível desenvolvido visando a responsividade impecável.</p>
+                    </div>
+
+                    <!-- CLONE EXATO PARA LOOP INVISÍVEL -->
+                    <div class="project-item hidden">
+                        <img src="images/HTML ICON.svg" alt="HTML">
+                        <span>Projeto 1</span>
+                        <p>Descrição curta do projeto focada em HTML. Construído com semântica.</p>
+                    </div>
+                    <div class="project-item hidden">
+                        <img src="images/CSS ICON.svg" alt="CSS">
+                        <span>Projeto 2</span>
+                        <p>Descrição focada em estilização com CSS, demonstração de layouts complexos.</p>
+                    </div>
+                    <div class="project-item hidden">
+                        <img src="images/JS ICON.svg" alt="JS">
+                        <span>Projeto 3</span>
+                        <p>Uma aplicação robusta de Javascript provando interatividade real-time e assíncrona.</p>
+                    </div>
+                    <div class="project-item hidden">
+                        <img src="images/HTML ICON.svg" alt="HTML">
+                        <span>Projeto 4</span>
+                        <p>Desenvolvimento focado em UX, aplicando animações e micro-interações fluidas.</p>
+                    </div>
+                    <div class="project-item hidden">
+                        <img src="images/CSS ICON.svg" alt="CSS">
+                        <span>Projeto 5</span>
+                        <p>Outro projeto incrível desenvolvido visando a responsividade impecável.</p>
+                    </div>
                 </div>
-                <div class="project-item hidden">
-                    <img src="images/CSS ICON.svg" alt="CSS">
-                    <span>CSS</span>
-                    <p>
-                        Linguagem responsável por definir o estilo dos sites. Possuo amplo domínio.</p>
-                </div>
-                <div class="project-item hidden">
-                    <img src="images/JS ICON.svg" alt="JS">
-                    <span>JAVASCRIPT</span>
-                    <p>Linguagem responsável por adicionar lógica aos sites. Possuo amplo domínio</p>
-                </div>
+
             </div>
         </div>
     </div>
