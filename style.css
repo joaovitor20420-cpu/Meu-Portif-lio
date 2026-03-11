@@ -246,7 +246,7 @@ body {
 .about-me-container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 120px;     /* Aumentando o espaçamento para afastar os dois */
     margin-top: 60px;
 }
@@ -254,7 +254,7 @@ body {
 .about-me-image {
     flex: 1;
     display: flex;
-    justify-content: flex-start; /* Empurra a foto para a esquerda */
+    justify-content: center; /* Centraliza a foto na sua coluna */
 }
 
 /* Wrapper tecnológico da imagem */
@@ -391,7 +391,7 @@ body {
 .skills-container{
     margin-top: 108px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
