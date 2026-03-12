@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #0d0d0d;
+    --bg-color: #070707; /* Match the dark essence of the showcase abstract image */
     --text-color: #ffffff;
     --primary-color: #00ffcc;
     --secondary-color: #111111;
@@ -12,28 +12,28 @@
 }
 
 .light-mode {
-    --bg-color: #f0f4f8; /* Brighter, softer background */
-    --text-color: #1a1a1a; /* Darker navy for better contrast */
-    --primary-color: #00ffcc; /* Keep original cyan/green for light mode */
+    --bg-color: #e2e8f0; /* Slightly darker, less glaring background */
+    --text-color: #0f172a; /* Very dark blue/slate for high contrast text */
+    --primary-color: #00b38f; /* Darker, more legible teal/green for light mode */
     --secondary-color: #ffffff;
-    --nav-bg: rgba(255, 255, 255, 0.9);
-    --glass-bg: rgba(255, 255, 255, 0.85); /* More opaque glass */
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --glass-bg: rgba(255, 255, 255, 0.9); /* More opaque glass */
     --glass-hover: rgba(255, 255, 255, 1);
-    --hover-bg: rgba(0, 255, 204, 0.1);
-    --primary-glow: rgba(0, 255, 204, 0.4);
-    --primary-glow-strong: rgba(0, 255, 204, 0.6);
-    --bg-gradient-1: rgba(0, 255, 204, 0.08); /* Soft green/cyan for background */
-    --bg-gradient-2: rgba(0, 255, 204, 0.05);
+    --hover-bg: rgba(0, 179, 143, 0.15); /* Adjusted to match new primary color */
+    --primary-glow: rgba(0, 179, 143, 0.5);
+    --primary-glow-strong: rgba(0, 179, 143, 0.7);
+    --bg-gradient-1: rgba(0, 179, 143, 0.1); /* Adjusted gradient to match */
+    --bg-gradient-2: rgba(0, 179, 143, 0.06);
 }
 
-/* Force specific elements to stay white in light mode */
+/* Force specific elements to stay white over the dark background in light mode */
 .light-mode .showcase-container h1,
-.light-mode .nav-bar-container ul li a {
+.light-mode .nav-bar-container:not(.scrolled) ul li a {
     color: #ffffff;
 }
-.light-mode .lang-btn,
-.light-mode .lang-sep,
-.light-mode .slider i {
+.light-mode .nav-bar-container:not(.scrolled) .lang-btn,
+.light-mode .nav-bar-container:not(.scrolled) .lang-sep,
+.light-mode .nav-bar-container:not(.scrolled) .slider i {
     color: #ffffff;
 }
 
@@ -54,16 +54,6 @@
 
 body {
     background-color: var(--bg-color);
-    background-image: 
-        radial-gradient(circle at 15% 50%, var(--bg-gradient-1) 0%, transparent 50%),
-        radial-gradient(circle at 85% 30%, var(--bg-gradient-2) 0%, transparent 50%),
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 10px,
-            var(--bg-gradient-3) 10px,
-            var(--bg-gradient-3) 11px
-        );
     background-attachment: fixed;
     color: var(--text-color);
 }
@@ -259,8 +249,8 @@ input:checked + .slider:before {
     transition: background-position 0.1s ease-out;
     background-image: url(images/modern_tech_background.png);
 
-    /*Shadow Transition*/
-    box-shadow: inset 0 -150px 100px -50px #111;
+    /*Shadow Transition into body background*/
+    box-shadow: inset 0 -150px 100px -50px var(--bg-color);
 }
 .showcase-avatar {
     width: auto;

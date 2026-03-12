@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         projetos: "Projetos",
         contato: "Contato",
       },
-      "text": "Oi, eu sou João/&gt;",
+      "text": "&lt;Oi, eu sou João/&gt;",
       "typing-text": [
         "Desenvolvedor Web",
         "Criador de Experiências Digitais",
@@ -37,12 +37,26 @@ document.addEventListener("DOMContentLoaded", () => {
       "section-titles": {
         "sobre": "Sobre mim",
         "habilidades": "Habilidades",
-        "projetos": "Projetos"
+        "projetos": "Projetos",
+        "contato": "Contato"
       },
       "skills": {
         "html": "Linguagem responsável por definir o esqueleto de sites. Possuo amplo domínio.",
         "css": "Linguagem responsável por definir o estilo dos sites. Possuo amplo domínio.",
         "js": "Linguagem responsável por adicionar lógica aos sites. Possuo amplo domínio."
+      },
+      "contact": {
+        "subtitle": "Vamos trabalhar juntos!",
+        "description": "Sinta-se à vontade para entrar em contato comigo caso tenha alguma oportunidade, ideia de projeto ou apenas queira dizer olá!",
+        "form": {
+            "name": "Seu Nome",
+            "email": "Seu Email",
+            "message": "Sua Mensagem",
+            "button": "Enviar Mensagem"
+        }
+      },
+      "footer": {
+        "rights": "Todos os direitos reservados."
       },
       "projects": [
         { "title": "Projeto 1", "desc": "Descrição curta do projeto focada em HTML. Construído com semântica." },
@@ -60,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         projetos: "Projects",
         contato: "Contact",
       },
-      "text": "Hi, I'm João/&gt;",
+      "text": "&lt;Hi, I'm Jhon/&gt;",
       "typing-text": [
         "Web Developer",
         "Digital Experience Creator",
@@ -88,7 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "section-titles": {
         "sobre": "About me",
         "habilidades": "Skills",
-        "projetos": "Projects"
+        "projetos": "Projects",
+        "contato": "Contact"
       },
       "skills": {
         "html": "Language responsible for defining the skeleton of websites. I have broad mastery.",
@@ -101,7 +116,20 @@ document.addEventListener("DOMContentLoaded", () => {
         { "title": "Project 3", "desc": "A robust Javascript application proving real-time and asynchronous interactivity." },
         { "title": "Project 4", "desc": "Development focused on UX, applying fluid animations and micro-interactions." },
         { "title": "Project 5", "desc": "Another amazing project developed with impeccable responsiveness in mind." }
-      ]
+      ],
+      "contact": {
+        "subtitle": "Let's work together!",
+        "description": "Feel free to reach out to me if you have any opportunities, project ideas, or just want to say hello!",
+        "form": {
+            "name": "Your Name",
+            "email": "Your Email",
+            "message": "Your Message",
+            "button": "Send Message"
+        }
+      },
+      "footer": {
+        "rights": "All rights reserved."
+      }
     }
   };
 
@@ -285,4 +313,42 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. Projects Carousel Logic
     // Lógica removida. O carrossel agora flui unicamente pelo scroll nativo do CSS (overflow-x: auto),
     // sem botões ou javascript forçando movimento.
+
+    // 6. Contact Form Submission Handling via FormSubmit
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = currentLang === 'pt' ? 'Enviando...' : 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            fetch('https://formsubmit.co/ajax/joaovitor20420@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert(currentLang === 'pt' ? 'Mensagem enviada com sucesso! Entrarei em contato em breve.' : 'Message sent successfully! I will get back to you soon.');
+                    contactForm.reset();
+                } else {
+                    alert(currentLang === 'pt' ? 'Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.' : 'An error occurred while sending the message. Please try again later.');
+                }
+            })
+            .catch(error => {
+                alert(currentLang === 'pt' ? 'Erro de conexão. Verifique sua internet.' : 'Connection error. Please check your internet.');
+            })
+            .finally(() => {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    }
 });
