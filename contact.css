@@ -64,11 +64,18 @@
     fill: var(--text-color);
     color: var(--text-color);
 }
-.method-item:hover .method-icon {
+
+.method-icon.color-icon {
+    fill: none !important; /* Prevents overriding native SVG colors */
+    color: transparent !important;
+}
+
+.method-item:hover .method-icon:not(.color-icon) {
     fill: var(--primary-color);
     color: var(--primary-color);
 }
-.light-mode .method-icon {
+
+.light-mode .method-icon:not(.color-icon) {
     fill: var(--text-color);
     color: var(--text-color);
 }
