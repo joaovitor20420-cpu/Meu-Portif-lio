@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" width="100%" height="100%">
+  <defs>
+    <!-- Cyan Gradient -->
+    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffcc" />
+      <stop offset="100%" stop-color="#00b38f" />
+    </linearGradient>
+    
+    <!-- Neon Glow Filter -->
+    <filter id="neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .text-name {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 85px;
+        fill: #ffffff;
+      }
+      .text-code {
+        font-family: 'Poppins', monospace;
+        font-weight: 600;
+        font-size: 75px;
+        fill: url(#primary-glow);
+        opacity: 0.9;
+      }
+      /* Optional fallback for light mode if used in responsive contexts */
+      @media (prefers-color-scheme: light) {
+        .text-name { fill: #0f172a; }
+      }
+    </style>
+  </defs>
+
+  <!-- Stylized J -->
+  <g transform="translate(15, -5)">
+    <!-- Top Horizontal Bar -->
+    <rect x="25" y="30" width="50" height="14" rx="7" fill="url(#primary-glow)" filter="url(#neon)"/>
+    
+    <!-- Main Stem and Curve -->
+    <path d="M 55 30 V 95 C 55 115, 30 115, 20 100" 
+          fill="none" 
+          stroke="url(#primary-glow)" 
+          stroke-width="14" 
+          stroke-linecap="round" 
+          filter="url(#neon)"/>
+  </g>
+
+  <!-- "oão" Text -->
+  <text x="105" y="105" class="text-name">oão</text>
+
+  <!-- "</>" Tags -->
+  <text x="310" y="105" class="text-code">&lt;/&gt;</text>
+</svg>
