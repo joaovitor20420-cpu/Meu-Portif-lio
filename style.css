@@ -12,16 +12,35 @@
 }
 
 .light-mode {
-    --bg-color: #f7f9fc;
-    --text-color: #1a1a1a;
-    --primary-color: #0088ff;
+    --bg-color: #f0f4f8; /* Brighter, softer background */
+    --text-color: #1a1a1a; /* Darker navy for better contrast */
+    --primary-color: #00ffcc; /* Keep original cyan/green for light mode */
     --secondary-color: #ffffff;
-    --nav-bg: rgba(255, 255, 255, 0.85);
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-hover: rgba(255, 255, 255, 0.95);
-    --hover-bg: rgba(0, 136, 255, 0.1);
-    --primary-glow: rgba(0, 136, 255, 0.4);
-    --primary-glow-strong: rgba(0, 136, 255, 0.6);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --glass-bg: rgba(255, 255, 255, 0.85); /* More opaque glass */
+    --glass-hover: rgba(255, 255, 255, 1);
+    --hover-bg: rgba(0, 255, 204, 0.1);
+    --primary-glow: rgba(0, 255, 204, 0.4);
+    --primary-glow-strong: rgba(0, 255, 204, 0.6);
+    --bg-gradient-1: rgba(0, 255, 204, 0.08); /* Soft green/cyan for background */
+    --bg-gradient-2: rgba(0, 255, 204, 0.05);
+}
+
+/* Force specific elements to stay white in light mode */
+.light-mode .showcase-container h1,
+.light-mode .nav-bar-container ul li a {
+    color: #ffffff;
+}
+.light-mode .lang-btn,
+.light-mode .lang-sep,
+.light-mode .slider i {
+    color: #ffffff;
+}
+
+:root {
+    --bg-gradient-1: rgba(0, 255, 204, 0.08); /* Default dark mode gradients */
+    --bg-gradient-2: rgba(0, 255, 204, 0.05);
+    --bg-gradient-3: rgba(0, 255, 204, 0.02);
 }
 
 *{
@@ -36,14 +55,14 @@
 body {
     background-color: var(--bg-color);
     background-image: 
-        radial-gradient(circle at 15% 50%, rgba(0, 255, 204, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 85% 30%, rgba(0, 255, 204, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 15% 50%, var(--bg-gradient-1) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, var(--bg-gradient-2) 0%, transparent 50%),
         repeating-linear-gradient(
             45deg,
             transparent,
             transparent 10px,
-            rgba(0, 255, 204, 0.02) 10px,
-            rgba(0, 255, 204, 0.02) 11px
+            var(--bg-gradient-3) 10px,
+            var(--bg-gradient-3) 11px
         );
     background-attachment: fixed;
     color: var(--text-color);
@@ -128,6 +147,103 @@ body {
     text-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
 }
 
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    animation: slideInRight 2s ease-out forwards;
+}
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease;
+    padding: 5px;
+    opacity: 0.6;
+}
+.lang-btn:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 8px var(--primary-glow);
+    opacity: 1;
+}
+.lang-btn.active {
+    color: var(--primary-color);
+    opacity: 1;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+}
+.lang-sep {
+    color: var(--text-color);
+    opacity: 0.4;
+    margin: 0 5px;
+    font-size: 0.9rem;
+}
+
+/* Theme Switcher */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    animation: slideInRight 2s ease-out forwards;
+}
+.theme-switch {
+    display: inline-block;
+    height: 28px;
+    position: relative;
+    width: 56px;
+}
+.theme-switch input {
+    display: none;
+}
+.slider {
+    background-color: var(--glass-bg);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border: 1px solid rgba(150, 150, 150, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider:before {
+    background-color: var(--primary-color);
+    bottom: 3px;
+    content: "";
+    height: 20px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+input:checked + .slider {
+    background-color: var(--nav-bg);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.slider i {
+    color: var(--text-color);
+    font-size: 12px;
+    z-index: 1;
+    opacity: 0.8;
+}
+
 /*showcase*/
 .showcase-container{
     height: 100vh;
@@ -141,7 +257,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: background-position 0.1s ease-out;
-    background-image: url(images/tech_background.png);
+    background-image: url(images/modern_tech_background.png);
 
     /*Shadow Transition*/
     box-shadow: inset 0 -150px 100px -50px #111;
@@ -188,6 +304,47 @@ body {
   50% { border-color: var(--primary-color); }
 }
 
+/* Social Links */
+.showcase-socials {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    z-index: 2;
+    opacity: 0;
+    animation: slideUp 1s ease-out 0.5s forwards;
+}
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: #1a1a1a;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+.social-btn:hover {
+    transform: translateY(-5px);
+    background: var(--primary-color);
+    box-shadow: 0 10px 20px var(--primary-glow-strong);
+    border-color: var(--primary-color);
+}
+.social-btn:hover .social-icon {
+    fill: #1a1a1a;
+    color: #1a1a1a;
+    filter: none;
+}
+
 /*Ultilitarios*/
 .hidden {
     opacity: 0;
@@ -210,7 +367,7 @@ body {
 .section-container{
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     padding-top: 120px;
     padding-bottom: 120px;
     background-color: transparent;

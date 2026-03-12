@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
     rel="stylesheet">
+    <link rel="stylesheet" href="images/font-awesome.css">
 </head>
 <body>
     <nav class="nav-bar-container">
@@ -20,26 +21,47 @@
             <span></span>
         </label>
         <ul class="nav-links">
-            <li><a href="#home" class="nav-item">Início</a></li>
-            <li><a href="#sobre" class="nav-item">Sobre mim</a></li>
-            <li><a href="#habilidades" class="nav-item">Habilidades</a></li>
-            <li><a href="#projetos" class="nav-item">Projetos</a></li>
-            <li><a href="#contato" class="nav-item">Contato</a></li>
+            <li class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                </label>
+            </li>
+            <li class="lang-switcher">
+                <button class="lang-btn active" onclick="changeLanguage('pt')">PT</button>
+                <span class="lang-sep">|</span>
+                <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+            </li>
+            <li><a href="#home" class="nav-item" data-i18n="nav-item.home">Início</a></li>
+            <li><a href="#sobre" class="nav-item" data-i18n="nav-item.sobre">Sobre mim</a></li>
+            <li><a href="#habilidades" class="nav-item" data-i18n="nav-item.habilidades">Habilidades</a></li>
+            <li><a href="#projetos" class="nav-item" data-i18n="nav-item.projetos">Projetos</a></li>
+            <li><a href="#contato" class="nav-item" data-i18n="nav-item.contato">Contato</a></li>
         </ul>
     </nav>
     <div id="home" class="showcase-container">
         
-        <h1>
-            &lt;Oi, eu sou João<span class="hide-mobile"> Vitor</span> /&gt;
+        <h1 id="text">
+            <code>&lt;Oi, eu sou João/&gt;</code>
         </h1>
         <p class="typing-text">
             <span class="typewriter"></span>
         </p>
+        
+        <div class="social-links showcase-socials">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/github.svg" alt="GitHub" class="social-icon"></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/whatsapp.svg" alt="WhatsApp" class="social-icon"></a>
+            <a href="mailto:email@exemplo.com" class="social-btn"><img src="images/email.svg" alt="Email" class="social-icon"></a>
+        </div>
     </div>
     
     <div id="sobre" class="section-container">
         <div class="section-content">
-            <h2 class="section-title hidden">Sobre mim</h2>
+            <h2 class="section-title hidden" data-i18n="section-titles.sobre">Sobre mim</h2>
             <div class="about-me-container">
                 <div class="about-me-image hidden from-left">
                     <div class="img-tech-wrapper">
@@ -49,21 +71,21 @@
                 <div class="about-me-text">
                     <div class="about-me-block hidden from-right">
                         <span class="code-bracket">&lt;</span>
-                        <p>
+                        <p data-i18n="about-me-text.about-me-block.0.p">
                             Desenvolvedor apaixonado por criar interfaces modernas e interativas, transformando ideias complexas em experiências digitais intuitivas. Sempre buscando o equilíbrio perfeito entre design e código limpo.
                         </p>
                         <span class="code-bracket">/&gt;</span>
                     </div>
                     <div class="about-me-block hidden from-right">
                         <span class="code-bracket">&lt;</span>
-                        <p>
+                        <p data-i18n="about-me-text.about-me-block.1.p">
                             Minha especialidade é o desenvolvimento Front-end, utilizando tecnologias e metodologias atuais para garantir performance, responsividade e acessibilidade em cada projeto construído.
                         </p>
                         <span class="code-bracket">/&gt;</span>
                     </div>
                     <div class="about-me-block hidden from-right">
                         <span class="code-bracket">&lt;</span>
-                        <p>
+                        <p data-i18n="about-me-text.about-me-block.2.p">
                             Continuamente aprendendo e explorando novas tendências da área de tecnologia, como animação, design de componentes e arquiteturas escaláveis.
                         </p>
                         <span class="code-bracket">/&gt;</span>
@@ -74,23 +96,23 @@
     </div>
     <div id="habilidades" class="section-container">
         <div class="section-content">
-            <h2 class="section-title hidden">Habilidades</h2>
+            <h2 class="section-title hidden" data-i18n="section-titles.habilidades">Habilidades</h2>
                 <div class="skills-container">
                     <div class="skill-item hidden">
                         <img src="images/HTML ICON.svg" alt="HTML">
                         <span>HTML</span>
-                        <p>Linguagem responsável por definir o esqueleto de sites. Possuo amplo domínio.</p>
+                        <p data-i18n="skills.html">Linguagem responsável por definir o esqueleto de sites. Possuo amplo domínio.</p>
                     </div>
                     <div class="skill-item hidden">
                         <img src="images/CSS ICON.svg" alt="CSS">
                         <span>CSS</span>
-                        <p>
+                        <p data-i18n="skills.css">
                             Linguagem responsável por definir o estilo dos sites. Possuo amplo domínio.</p>
                     </div>
                     <div class="skill-item hidden">
                         <img src="images/JS ICON.svg" alt="JS">
                         <span>JAVASCRIPT</span>
-                        <p>Linguagem responsável por adicionar lógica aos sites. Possuo amplo domínio</p>
+                        <p data-i18n="skills.js">Linguagem responsável por adicionar lógica aos sites. Possuo amplo domínio</p>
                     </div>
                 </div>
             </div>
@@ -98,7 +120,7 @@
     </div>
     <div id="projetos" class="section-container">
         <div class="section-content">
-            <h2 class="section-title hidden">Projetos</h2>
+            <h2 class="section-title hidden" data-i18n="section-titles.projetos">Projetos</h2>
             
             <!-- Wrapper do Carrossel -->
             <div class="projects-carousel-wrapper">
@@ -107,28 +129,28 @@
                 <div class="projects-container">
                     <div class="project-item hidden">
                         <img src="images/HTML ICON.svg" alt="HTML">
-                        <span>Projeto 1</span>
-                        <p>Descrição curta do projeto focada em HTML. Construído com semântica.</p>
+                        <span data-i18n="projects.0.title">Projeto 1</span>
+                        <p data-i18n="projects.0.desc">Descrição curta do projeto focada em HTML. Construído com semântica.</p>
                     </div>
                     <div class="project-item hidden">
                         <img src="images/CSS ICON.svg" alt="CSS">
-                        <span>Projeto 2</span>
-                        <p>Descrição focada em estilização com CSS, demonstração de layouts complexos.</p>
+                        <span data-i18n="projects.1.title">Projeto 2</span>
+                        <p data-i18n="projects.1.desc">Descrição focada em estilização com CSS, demonstração de layouts complexos.</p>
                     </div>
                     <div class="project-item hidden">
                         <img src="images/JS ICON.svg" alt="JS">
-                        <span>Projeto 3</span>
-                        <p>Uma aplicação robusta de Javascript provando interatividade real-time e assíncrona.</p>
+                        <span data-i18n="projects.2.title">Projeto 3</span>
+                        <p data-i18n="projects.2.desc">Uma aplicação robusta de Javascript provando interatividade real-time e assíncrona.</p>
                     </div>
                     <div class="project-item hidden">
                         <img src="images/HTML ICON.svg" alt="HTML">
-                        <span>Projeto 4</span>
-                        <p>Desenvolvimento focado em UX, aplicando animações e micro-interações fluidas.</p>
+                        <span data-i18n="projects.3.title">Projeto 4</span>
+                        <p data-i18n="projects.3.desc">Desenvolvimento focado em UX, aplicando animações e micro-interações fluidas.</p>
                     </div>
                     <div class="project-item hidden">
                         <img src="images/CSS ICON.svg" alt="CSS">
-                        <span>Projeto 5</span>
-                        <p>Outro projeto incrível desenvolvido visando a responsividade impecável.</p>
+                        <span data-i18n="projects.4.title">Projeto 5</span>
+                        <p data-i18n="projects.4.desc">Outro projeto incrível desenvolvido visando a responsividade impecável.</p>
                     </div>
                     <!-- Você pode adicionar ainda mais projetos únicos aqui no futuro -->
                 </div>

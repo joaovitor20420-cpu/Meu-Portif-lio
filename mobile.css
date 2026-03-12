@@ -81,6 +81,10 @@
         padding: 0 20px;
     }
 
+    .showcase-container {
+        min-height: 100vh;
+    }
+
     .showcase-avatar {
         height: 40vh;
         margin-top: 60px;
