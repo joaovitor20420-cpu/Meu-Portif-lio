@@ -1,221 +1,1 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
-    rel="stylesheet">
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="mobile.css">
-</head>
-<body>
-    <nav class="nav-bar-container">
-        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-        <label for="menu-toggle" class="hamburger-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <ul class="nav-links">
-            <li class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round">
-                        <i class="fa-solid fa-moon"></i>
-                        <i class="fa-solid fa-sun"></i>
-                    </div>
-                </label>
-            </li>
-            <li class="lang-switcher">
-                <button class="lang-btn active" onclick="changeLanguage('pt')">PT</button>
-                <span class="lang-sep">|</span>
-                <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
-            </li>
-            <li><a href="#home" class="nav-item" data-i18n="nav-item.home">Início</a></li>
-            <li><a href="#sobre" class="nav-item" data-i18n="nav-item.sobre">Sobre mim</a></li>
-            <li><a href="#habilidades" class="nav-item" data-i18n="nav-item.habilidades">Habilidades</a></li>
-            <li><a href="#projetos" class="nav-item" data-i18n="nav-item.projetos">Projetos</a></li>
-            <li><a href="#contato" class="nav-item" data-i18n="nav-item.contato">Contato</a></li>
-        </ul>
-    </nav>
-    <div id="home" class="showcase-container">
-        
-        <h1 id="text">
-            <code>&lt;Oi, eu sou João/&gt;</code>
-        </h1>
-        <p class="typing-text">
-            <span class="typewriter"></span>
-        </p>
-        
-        <div class="social-links showcase-socials">
-            <a href="https://www.linkedin.com/in/joão-vasconcelos-b96092280" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
-            <a href="https://github.com/joaovitor20420-cpu" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/github.svg" alt="GitHub" class="social-icon"></a>
-            <a href="https://wa.me/5531992692459" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/whatsapp.svg" alt="WhatsApp" class="social-icon"></a>
-            <a href="#contato" class="social-btn"><img src="images/email.svg" alt="Email" class="social-icon"></a>
-        </div>
-    </div>
-    
-    <div id="sobre" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title hidden" data-i18n="section-titles.sobre">Sobre mim</h2>
-            <div class="about-me-container">
-                <div class="about-me-image hidden from-left">
-                    <div class="img-tech-wrapper">
-                        <img src="images/Gemini_Generated_Image_xqdsw2xqdsw2xqds.png" alt="João Vitor">
-                    </div>
-                </div>
-                <div class="about-me-text">
-                    <div class="about-me-block hidden from-right">
-                        <span class="code-bracket">&lt;</span>
-                        <p data-i18n="about-me-text.about-me-block.0.p">
-                            Desenvolvedor apaixonado por criar interfaces modernas e interativas, transformando ideias complexas em experiências digitais intuitivas. Sempre buscando o equilíbrio perfeito entre design e código limpo.
-                        </p>
-                        <span class="code-bracket">/&gt;</span>
-                    </div>
-                    <div class="about-me-block hidden from-right">
-                        <span class="code-bracket">&lt;</span>
-                        <p data-i18n="about-me-text.about-me-block.1.p">
-                            Minha especialidade é o desenvolvimento Front-end, utilizando tecnologias e metodologias atuais para garantir performance, responsividade e acessibilidade em cada projeto construído.
-                        </p>
-                        <span class="code-bracket">/&gt;</span>
-                    </div>
-                    <div class="about-me-block hidden from-right">
-                        <span class="code-bracket">&lt;</span>
-                        <p data-i18n="about-me-text.about-me-block.2.p">
-                            Continuamente aprendendo e explorando novas tendências da área de tecnologia, como animação, design de componentes e arquiteturas escaláveis.
-                        </p>
-                        <span class="code-bracket">/&gt;</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="habilidades" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title hidden" data-i18n="section-titles.habilidades">Habilidades</h2>
-                <div class="skills-container">
-                    <div class="skill-item hidden">
-                        <img src="images/HTML ICON.svg" alt="HTML">
-                        <span>HTML</span>
-                        <p data-i18n="skills.html">Linguagem responsável por definir o esqueleto de sites. Possuo amplo domínio.</p>
-                    </div>
-                    <div class="skill-item hidden">
-                        <img src="images/CSS ICON.svg" alt="CSS">
-                        <span>CSS</span>
-                        <p data-i18n="skills.css">
-                            Linguagem responsável por definir o estilo dos sites. Possuo amplo domínio.</p>
-                    </div>
-                    <div class="skill-item hidden">
-                        <img src="images/JS ICON.svg" alt="JS">
-                        <span>JAVASCRIPT</span>
-                        <p data-i18n="skills.js">Linguagem responsável por adicionar lógica aos sites. Possuo amplo domínio</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="projetos" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title hidden" data-i18n="section-titles.projetos">Projetos</h2>
-            
-            <!-- Wrapper do Carrossel -->
-            <div class="projects-carousel-wrapper">
-                
-                <!-- Container de Projetos -->
-                <div class="projects-container">
-                    <div class="project-item hidden">
-                        <img src="images/HTML ICON.svg" alt="HTML">
-                        <span data-i18n="projects.0.title">Projeto 1</span>
-                        <p data-i18n="projects.0.desc">Descrição curta do projeto focada em HTML. Construído com semântica.</p>
-                    </div>
-                    <div class="project-item hidden">
-                        <img src="images/CSS ICON.svg" alt="CSS">
-                        <span data-i18n="projects.1.title">Projeto 2</span>
-                        <p data-i18n="projects.1.desc">Descrição focada em estilização com CSS, demonstração de layouts complexos.</p>
-                    </div>
-                    <div class="project-item hidden">
-                        <img src="images/JS ICON.svg" alt="JS">
-                        <span data-i18n="projects.2.title">Projeto 3</span>
-                        <p data-i18n="projects.2.desc">Uma aplicação robusta de Javascript provando interatividade real-time e assíncrona.</p>
-                    </div>
-                    <div class="project-item hidden">
-                        <img src="images/HTML ICON.svg" alt="HTML">
-                        <span data-i18n="projects.3.title">Projeto 4</span>
-                        <p data-i18n="projects.3.desc">Desenvolvimento focado em UX, aplicando animações e micro-interações fluidas.</p>
-                    </div>
-                    <div class="project-item hidden">
-                        <img src="images/CSS ICON.svg" alt="CSS">
-                        <span data-i18n="projects.4.title">Projeto 5</span>
-                        <p data-i18n="projects.4.desc">Outro projeto incrível desenvolvido visando a responsividade impecável.</p>
-                    </div>
-                    <!-- Você pode adicionar ainda mais projetos únicos aqui no futuro -->
-                </div>
-
-            </div>
-        </div>
-    </div>
-    
-    <!-- Seção: Contato -->
-    <div id="contato" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title hidden" data-i18n="section-titles.contato">Contato</h2>
-            
-            <div class="contact-container hidden">
-                <div class="contact-info">
-                    <h3 data-i18n="contact.subtitle">Vamos trabalhar juntos!</h3>
-                    <p data-i18n="contact.description">Sinta-se à vontade para entrar em contato comigo caso tenha alguma oportunidade, ideia de projeto ou apenas queira dizer olá!</p>
-                    <div class="contact-methods">
-                        <div class="method-item">
-                            <img src="images/gmail-color.svg" alt="Email" class="method-icon color-icon">
-                            <span>joaovitor20420@gmail.com</span>
-                        </div>
-                        <div class="method-item">
-                            <img src="images/whatsapp-color.svg" alt="WhatsApp" class="method-icon color-icon">
-                            <span>(31) 99269-2459</span>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact-form" action="https://formsubmit.co/joaovitor20420@gmail.com" method="POST">
-                    <!-- Configurações do FormSubmit -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Novo contato do Portfólio!">
-
-                    <div class="input-group">
-                        <input type="text" id="name" name="name" required placeholder=" ">
-                        <label for="name" data-i18n="contact.form.name">Seu Nome</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" id="email" name="email" required placeholder=" ">
-                        <label for="email" data-i18n="contact.form.email">Seu Email</label>
-                    </div>
-                    <div class="input-group">
-                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                        <label for="message" data-i18n="contact.form.message">Sua Mensagem</label>
-                    </div>
-                    <button type="submit" class="submit-btn" data-i18n="contact.form.button">Enviar Mensagem</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024 João. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/joão-vasconcelos-b96092280" target="_blank" rel="noopener noreferrer"><img src="images/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
-                <a href="https://github.com/joaovitor20420-cpu" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" alt="GitHub" class="social-icon"></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js" defer></script>
-</body>
-</html>
-
-
+<!DOCTYPE html><html lang="pt-br"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Portifólio</title>    <link rel="stylesheet" href="style.css">    <link rel="preconnect" href="https://fonts.googleapis.com">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"     rel="stylesheet">    <link rel="stylesheet" href="contact.css">    <link rel="stylesheet" href="mobile.css"></head><body>    <nav class="nav-bar-container">        <input type="checkbox" id="menu-toggle" class="menu-checkbox">        <label for="menu-toggle" class="hamburger-btn">            <span></span>            <span></span>            <span></span>        </label>        <ul class="nav-links">            <li class="theme-switch-wrapper">                <label class="theme-switch" for="checkbox">                    <input type="checkbox" id="checkbox" />                    <div class="slider round">                        <i class="fa-solid fa-moon"></i>                        <i class="fa-solid fa-sun"></i>                    </div>                </label>            </li>            <li class="lang-switcher">                <button class="lang-btn active" onclick="changeLanguage('pt')">PT</button>                <span class="lang-sep">|</span>                <button class="lang-btn" onclick="changeLanguage('en')">EN</button>            </li>            <li><a href="#home" class="nav-item" data-i18n="nav-item.home">Início</a></li>            <li><a href="#sobre" class="nav-item" data-i18n="nav-item.sobre">Sobre mim</a></li>            <li><a href="#habilidades" class="nav-item" data-i18n="nav-item.habilidades">Habilidades</a></li>            <li><a href="#projetos" class="nav-item" data-i18n="nav-item.projetos">Projetos</a></li>            <li><a href="#contato" class="nav-item" data-i18n="nav-item.contato">Contato</a></li>        </ul>    </nav>    <div id="home" class="showcase-container">        <h1 id="text">            <code>&lt;Oi, eu sou João/&gt;</code>        </h1>        <p class="typing-text">            <span class="typewriter"></span>        </p>        <div class="social-links showcase-socials">            <a href="https://www.linkedin.com/in/joão-vasconcelos-b96092280" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/linkedin.svg" alt="LinkedIn" class="social-icon"></a>            <a href="https://github.com/joaovitor20420-cpu" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/github.svg" alt="GitHub" class="social-icon"></a>            <a href="https://wa.me/5531992692459" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/whatsapp.svg" alt="WhatsApp" class="social-icon"></a>            <a href="#contato" class="social-btn"><img src="images/email.svg" alt="Email" class="social-icon"></a>        </div>    </div>    <div id="sobre" class="section-container">        <div class="section-content">            <h2 class="section-title hidden" data-i18n="section-titles.sobre">Sobre mim</h2>            <div class="about-me-container">                <div class="about-me-image hidden from-left">                    <div class="img-tech-wrapper">                        <img src="images/Gemini_Generated_Image_xqdsw2xqdsw2xqds.png" alt="João Vitor">                    </div>                </div>                <div class="about-me-text">                    <div class="about-me-block hidden from-right">                        <span class="code-bracket">&lt;</span>                        <p data-i18n="about-me-text.about-me-block.0.p">                            Desenvolvedor apaixonado por criar interfaces modernas e interativas, transformando ideias complexas em experiências digitais intuitivas. Sempre buscando o equilíbrio perfeito entre design e código limpo.                        </p>                        <span class="code-bracket">/&gt;</span>                    </div>                    <div class="about-me-block hidden from-right">                        <span class="code-bracket">&lt;</span>                        <p data-i18n="about-me-text.about-me-block.1.p">                            Minha especialidade é o desenvolvimento Front-end, utilizando tecnologias e metodologias atuais para garantir performance, responsividade e acessibilidade em cada projeto construído.                        </p>                        <span class="code-bracket">/&gt;</span>                    </div>                    <div class="about-me-block hidden from-right">                        <span class="code-bracket">&lt;</span>                        <p data-i18n="about-me-text.about-me-block.2.p">                            Continuamente aprendendo e explorando novas tendências da área de tecnologia, como animação, design de componentes e arquiteturas escaláveis.                        </p>                        <span class="code-bracket">/&gt;</span>                    </div>                </div>            </div>        </div>    </div>    <div id="habilidades" class="section-container">        <div class="section-content">            <h2 class="section-title hidden" data-i18n="section-titles.habilidades">Habilidades</h2>                <div class="skills-container">                    <div class="skill-item hidden">                        <img src="images/HTML ICON.svg" alt="HTML">                        <span>HTML</span>                        <p data-i18n="skills.html">Linguagem responsável por definir o esqueleto de sites. Possuo amplo domínio.</p>                    </div>                    <div class="skill-item hidden">                        <img src="images/CSS ICON.svg" alt="CSS">                        <span>CSS</span>                        <p data-i18n="skills.css">                            Linguagem responsável por definir o estilo dos sites. Possuo amplo domínio.</p>                    </div>                    <div class="skill-item hidden">                        <img src="images/JS ICON.svg" alt="JS">                        <span>JAVASCRIPT</span>                        <p data-i18n="skills.js">Linguagem responsável por adicionar lógica aos sites. Possuo amplo domínio</p>                    </div>                </div>            </div>        </div>    </div>    <div id="projetos" class="section-container">        <div class="section-content">            <h2 class="section-title hidden" data-i18n="section-titles.projetos">Projetos</h2>            <div class="projects-carousel-wrapper">                <div class="projects-container">                    <div class="project-item hidden">                        <img src="images/HTML ICON.svg" alt="HTML">                        <span data-i18n="projects.0.title">Projeto 1</span>                        <p data-i18n="projects.0.desc">Descrição curta do projeto focada em HTML. Construído com semântica.</p>                    </div>                    <div class="project-item hidden">                        <img src="images/CSS ICON.svg" alt="CSS">                        <span data-i18n="projects.1.title">Projeto 2</span>                        <p data-i18n="projects.1.desc">Descrição focada em estilização com CSS, demonstração de layouts complexos.</p>                    </div>                    <div class="project-item hidden">                        <img src="images/JS ICON.svg" alt="JS">                        <span data-i18n="projects.2.title">Projeto 3</span>                        <p data-i18n="projects.2.desc">Uma aplicação robusta de Javascript provando interatividade real-time e assíncrona.</p>                    </div>                    <div class="project-item hidden">                        <img src="images/HTML ICON.svg" alt="HTML">                        <span data-i18n="projects.3.title">Projeto 4</span>                        <p data-i18n="projects.3.desc">Desenvolvimento focado em UX, aplicando animações e micro-interações fluidas.</p>                    </div>                    <div class="project-item hidden">                        <img src="images/CSS ICON.svg" alt="CSS">                        <span data-i18n="projects.4.title">Projeto 5</span>                        <p data-i18n="projects.4.desc">Outro projeto incrível desenvolvido visando a responsividade impecável.</p>                    </div>                </div>            </div>        </div>    </div>    <div id="contato" class="section-container">        <div class="section-content">            <h2 class="section-title hidden" data-i18n="section-titles.contato">Contato</h2>            <div class="contact-container hidden">                <div class="contact-info">                    <h3 data-i18n="contact.subtitle">Vamos trabalhar juntos!</h3>                    <p data-i18n="contact.description">Sinta-se à vontade para entrar em contato comigo caso tenha alguma oportunidade, ideia de projeto ou apenas queira dizer olá!</p>                    <div class="contact-methods">                        <div class="method-item">                            <img src="images/gmail-color.svg" alt="Email" class="method-icon color-icon">                            <span>joaovitor20420@gmail.com</span>                        </div>                        <div class="method-item">                            <img src="images/whatsapp-color.svg" alt="WhatsApp" class="method-icon color-icon">                            <span>(31) 99269-2459</span>                        </div>                    </div>                </div>                <form class="contact-form" action="https://formsubmit.co/joaovitor20420@gmail.com" method="POST">                    <input type="hidden" name="_captcha" value="false">                    <input type="hidden" name="_subject" value="Novo contato do Portfólio!">                    <div class="input-group">                        <input type="text" id="name" name="name" required placeholder=" ">                        <label for="name" data-i18n="contact.form.name">Seu Nome</label>                    </div>                    <div class="input-group">                        <input type="email" id="email" name="email" required placeholder=" ">                        <label for="email" data-i18n="contact.form.email">Seu Email</label>                    </div>                    <div class="input-group">                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>                        <label for="message" data-i18n="contact.form.message">Sua Mensagem</label>                    </div>                    <button type="submit" class="submit-btn" data-i18n="contact.form.button">Enviar Mensagem</button>                </form>            </div>        </div>    </div>    <footer class="footer">        <div class="footer-content">            <p>&copy; 2024 João. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>            <div class="footer-socials">                <a href="https://www.linkedin.com/in/joão-vasconcelos-b96092280" target="_blank" rel="noopener noreferrer"><img src="images/linkedin.svg" alt="LinkedIn" class="social-icon"></a>                <a href="https://github.com/joaovitor20420-cpu" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" alt="GitHub" class="social-icon"></a>            </div>        </div>    </footer>    <script src="script.js" defer></script></body></html>

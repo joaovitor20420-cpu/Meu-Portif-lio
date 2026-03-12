@@ -1,240 +1,1 @@
-@media (max-width: 1040px) {
-    /* Navbar Adjustment */
-    .nav-bar-container {
-        justify-content: flex-end;
-        padding: 15px 20px;
-        background-color: transparent;
-        box-shadow: none;
-    }
-
-    .hamburger-btn {
-        display: flex;
-        z-index: 20;
-        position: relative;
-    }
-
-    .menu-checkbox {
-        display: block; /* Para existir na dom e captar o toque */
-        position: absolute;
-        top: 23px; /* Alinhar junto do padding do hamburger */
-        right: 28px; 
-        width: 41px;
-        height: 34px;
-        z-index: 30; /* Fica acima de TUDO no mobile */
-        opacity: 0; /* Torna ele invisível, mas fisicamente lá para clique */
-        cursor: pointer;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: -50%;
-        width: 50%;
-        background-color: rgba(0, 0, 0, 0.9);
-        height: 100vh;
-        justify-content: flex-start !important;
-        align-items: flex-start;
-        padding-top: 80px;
-        padding-left: 20px;
-        z-index: 15;
-        transition: right 0.4s ease-in-out;
-    }
-
-    .menu-checkbox:checked ~ .nav-links {
-        right: 0;
-    }
-
-    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(1) {
-        transform: translateY(7.5px) rotate(45deg);
-    }
-
-    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(3) {
-        transform: translateY(-7.5px) rotate(-45deg);
-    }
-
-    .nav-bar-container ul li {
-        margin: 15px 0;
-        margin-right: 0;
-        font-size: 1.05rem;
-    }
-
-    /* Showcase Adjustment */
-    .hide-mobile {
-        display: none;
-    }
-
-    .showcase-container h1 {
-        font-size: 36px;
-        text-align: center;
-        padding: 0 15px;
-    }
-
-    .showcase-container p {
-        font-size: 16px;
-        text-align: center;
-        padding: 0 20px;
-    }
-
-    .showcase-container {
-        min-height: 100vh;
-    }
-
-    .showcase-avatar {
-        height: 40vh;
-        margin-top: 60px;
-    }
-
-    /* Sections Adjustment (Stacking Vertically) */
-    .section-container {
-        padding-top: 60px;
-        padding-bottom: 60px;
-        min-height: auto;
-    }
-
-    .about-me-container {
-        flex-direction: column;
-    }
-
-    .section-title {
-        justify-self: center; /* Centralizar títulos no mobile */
-        margin-bottom: 40px;
-        font-size: 2.2rem;
-    }
-    
-    .img-tech-wrapper {
-        width: 250px;
-        height: 250px;
-        margin-bottom: 20px;
-    }
-    .img-tech-wrapper img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .about-me-text {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .about-me-block {
-        padding: 5px 15px; /* Mais achatado (menos padding vertical) */
-        text-align: center;
-        border-left: none;
-        border-top: 2px dashed rgba(0, 255, 204, 0.2);
-        margin-left: 20px; /* Reduzindo margem para aproveitar mais espaço na tela */
-        margin-right: 20px;
-    }
-    
-    .about-me-block p {
-        text-align: center;
-        font-size: 1rem;
-    }
-
-    .about-me-block:hover {
-        border-left: none;
-        border-top: 2px solid #00ffcc;
-        transform: translateY(-5px);
-    }
-
-    .skills-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Grid 2x2 */
-        gap: 15px; /* Espaço entre as cartas */
-        margin-top: 50px;
-        padding: 0 10px;
-    }
-
-    .skills-container .skill-item {
-        width: 100%; /* Ocupa toda a célula do grid */
-        margin-bottom: 0px; 
-        padding: 20px 10px; /* Achatando a carta também */
-    }
-
-    .skills-container .skill-item p {
-        display: none; /* Esconde a descrição no celular */
-    }
-
-    .skills-container .skill-item:nth-child(2) {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    /* Projects Container Adjustment */
-    .projects-carousel-wrapper {
-        margin-top: 30px;
-        padding: 0 10px;
-        width: 100%;
-    }
-
-    .project-item {
-        flex-shrink: 0;
-        width: 220px;
-        height: 350px; /* Mantém 'em pé' no mobile de forma rígida */
-        justify-content: center;
-        padding: 20px 15px; 
-    }
-
-    .project-item img {
-        width: 60px;
-        height: 60px;
-    }
-
-    /* Contact Section Mobile Adjustment */
-    .contact-container {
-        flex-direction: column;
-        padding: 30px 20px;
-        gap: 30px;
-        margin: 0 10px;
-    }
-
-    .contact-info {
-        text-align: center;
-    }
-
-    .contact-info h3 {
-        font-size: 1.6rem;
-    }
-
-    .contact-info p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-
-    .method-item {
-        justify-content: center;
-        font-size: 1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-        text-align: center;
-        padding: 12px;
-        font-size: 1rem;
-    }
-
-    /* Footer Mobile Adjustment */
-    .footer {
-        padding: 20px 15px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .footer-content p {
-        font-size: 0.9rem;
-    }
-
-    .footer-socials {
-        justify-content: center;
-    }
-}
+@media (max-width: 1040px) {    .nav-bar-container {        justify-content: flex-end;        padding: 15px 20px;        background-color: transparent;        box-shadow: none;    }    .hamburger-btn {        display: flex;        z-index: 20;        position: relative;    }    .menu-checkbox {        display: block;         position: absolute;        top: 23px;         right: 28px;         width: 41px;        height: 34px;        z-index: 30;         opacity: 0;         cursor: pointer;    }    .nav-links {        display: flex;        flex-direction: column;        position: fixed;        top: 0;        right: -50%;        width: 50%;        background-color: rgba(0, 0, 0, 0.9);        height: 100vh;        justify-content: flex-start !important;        align-items: flex-start;        padding-top: 80px;        padding-left: 20px;        z-index: 15;        transition: right 0.4s ease-in-out;    }    .menu-checkbox:checked ~ .nav-links {        right: 0;    }    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(1) {        transform: translateY(7.5px) rotate(45deg);    }    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(2) {        opacity: 0;    }    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(3) {        transform: translateY(-7.5px) rotate(-45deg);    }    .nav-bar-container ul li {        margin: 15px 0;        margin-right: 0;        font-size: 1.05rem;    }    .hide-mobile {        display: none;    }    .showcase-container h1 {        font-size: 36px;        text-align: center;        padding: 0 15px;    }    .showcase-container p {        font-size: 16px;        text-align: center;        padding: 0 20px;    }    .showcase-container {        min-height: 100vh;    }    .showcase-avatar {        height: 40vh;        margin-top: 60px;    }    .section-container {        padding-top: 60px;        padding-bottom: 60px;        min-height: auto;    }    .about-me-container {        flex-direction: column;    }    .section-title {        justify-self: center;         margin-bottom: 40px;        font-size: 2.2rem;    }    .img-tech-wrapper {        width: 250px;        height: 250px;        margin-bottom: 20px;    }    .img-tech-wrapper img {        width: 100%;        height: 100%;    }    .about-me-text {        width: 100%;        padding: 10px;    }    .about-me-block {        padding: 5px 15px;         text-align: center;        border-left: none;        border-top: 2px dashed rgba(0, 255, 204, 0.2);        margin-left: 20px;         margin-right: 20px;    }    .about-me-block p {        text-align: center;        font-size: 1rem;    }    .about-me-block:hover {        border-left: none;        border-top: 2px solid #00ffcc;        transform: translateY(-5px);    }    .skills-container {        display: grid;        grid-template-columns: repeat(2, 1fr);         gap: 15px;         margin-top: 50px;        padding: 0 10px;    }    .skills-container .skill-item {        width: 100%;         margin-bottom: 0px;         padding: 20px 10px;     }    .skills-container .skill-item p {        display: none;     }    .skills-container .skill-item:nth-child(2) {        margin-left: 0;        margin-right: 0;    }    .projects-carousel-wrapper {        margin-top: 30px;        padding: 0 10px;        width: 100%;    }    .project-item {        flex-shrink: 0;        width: 220px;        height: 350px;         justify-content: center;        padding: 20px 15px;     }    .project-item img {        width: 60px;        height: 60px;    }    .contact-container {        flex-direction: column;        padding: 30px 20px;        gap: 20px;        margin-top: 0;        margin-bottom: 0;        margin-left: auto;        margin-right: auto;        max-width:600px;         width: 90%;     }    .contact-info {        text-align: center;    }    .contact-info h3 {        font-size: 1.1rem;     }    .contact-info p {        display: none;     }    .method-item {        display: none;     }    .contact-form {        gap: 8px;     }    .input-group input,    .input-group textarea {        padding: 6px;         font-size: 0.8rem;         border-radius: 5px;     }    .input-group label {        font-size: 0.8rem;        top: 8px;    }    .input-group textarea {        height: 60px;     }    .submit-btn {        width: 100%;        text-align: center;        padding: 8px;         font-size: 0.85rem;     }    .footer {        padding: 20px 15px;    }    .footer-content {        flex-direction: column;        justify-content: center;        text-align: center;        gap: 15px;    }    .footer-content p {        font-size: 0.9rem;    }    .footer-socials {        justify-content: center;    }}

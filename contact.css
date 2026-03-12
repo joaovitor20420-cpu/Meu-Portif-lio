@@ -1,7 +1,3 @@
-
-/* ========================================================================================= */
-/* Contato Section */
-/* ========================================================================================= */
 .contact-container {
     display: flex;
     flex-direction: row;
@@ -15,21 +11,18 @@
     max-width: 1000px;
     margin: 0 auto;
 }
-
 .contact-info {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .contact-info h3 {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 20px;
     text-shadow: 0 0 10px var(--primary-glow);
 }
-
 .contact-info p {
     font-size: 1.1rem;
     color: var(--text-color);
@@ -37,13 +30,11 @@
     line-height: 1.6;
     opacity: 0.9;
 }
-
 .contact-methods {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
 .method-item {
     display: flex;
     align-items: center;
@@ -52,45 +43,37 @@
     color: var(--text-color);
     transition: transform 0.3s ease, color 0.3s ease;
 }
-
 .method-item:hover {
     color: var(--primary-color);
     transform: translateX(10px);
 }
-
 .method-icon {
     width: 25px;
     height: 25px;
     fill: var(--text-color);
     color: var(--text-color);
 }
-
 .method-icon.color-icon {
-    fill: none !important; /* Prevents overriding native SVG colors */
+    fill: none !important; 
     color: transparent !important;
 }
-
 .method-item:hover .method-icon:not(.color-icon) {
     fill: var(--primary-color);
     color: var(--primary-color);
 }
-
 .light-mode .method-icon:not(.color-icon) {
     fill: var(--text-color);
     color: var(--text-color);
 }
-
 .contact-form {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
 .input-group {
     position: relative;
 }
-
 .input-group input,
 .input-group textarea {
     width: 100%;
@@ -104,25 +87,21 @@
     transition: all 0.3s ease;
     font-family: 'Poppins', sans-serif;
 }
-
 .light-mode .input-group input,
 .light-mode .input-group textarea {
     background: rgba(0, 0, 0, 0.03);
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
 .input-group input:focus,
 .input-group textarea:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 10px var(--primary-glow);
     background: rgba(255, 255, 255, 0.1);
 }
-
 .light-mode .input-group input:focus,
 .input-group textarea:focus {
     background: rgba(0, 0, 0, 0.05);
 }
-
 .input-group label {
     position: absolute;
     left: 15px;
@@ -133,8 +112,6 @@
     transition: all 0.3s ease;
     font-size: 1rem;
 }
-
-/* Float Label Effect */
 .input-group input:focus ~ label,
 .input-group input:not(:placeholder-shown) ~ label,
 .input-group textarea:focus ~ label,
@@ -143,12 +120,11 @@
     left: 10px;
     font-size: 0.8rem;
     color: var(--primary-color);
-    background: var(--bg-color); /* Matches body */
+    background: var(--bg-color); 
     padding: 0 5px;
     border-radius: 5px;
     opacity: 1;
 }
-
 .submit-btn {
     padding: 15px 30px;
     background: transparent;
@@ -162,17 +138,12 @@
     box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
     align-self: flex-start;
 }
-
 .submit-btn:hover {
     background: var(--primary-color);
     color: var(--bg-color);
     box-shadow: 0 0 20px var(--primary-glow-strong);
     transform: translateY(-3px);
 }
-
-/* ========================================================================================= */
-/* Footer */
-/* ========================================================================================= */
 .footer {
     width: 100%;
     background-color: var(--nav-bg);
@@ -182,7 +153,6 @@
     z-index: 10;
     margin-top: auto;
 }
-
 .footer-content {
     max-width: 1400px;
     margin: 0 auto;
@@ -192,18 +162,15 @@
     flex-wrap: wrap;
     gap: 20px;
 }
-
 .footer-content p {
     color: var(--text-color);
     font-size: 1rem;
     opacity: 0.8;
 }
-
 .footer-socials {
     display: flex;
     gap: 15px;
 }
-
 .footer-socials a {
     display: flex;
     align-items: center;
@@ -215,7 +182,6 @@
     border: 1px solid rgba(150, 150, 150, 0.2);
     transition: all 0.3s ease;
 }
-
 .footer-socials a .social-icon {
     width: 18px;
     height: 18px;
@@ -223,41 +189,33 @@
     color: var(--text-color);
     transition: all 0.3s ease;
 }
-
 .footer-socials a:hover {
     background: var(--primary-color);
     border-color: var(--primary-color);
     box-shadow: 0 0 15px var(--primary-glow);
     transform: translateY(-3px);
 }
-
 .footer-socials a:hover .social-icon {
     fill: var(--bg-color);
     color: var(--bg-color);
     filter: invert(1);
 }
-
-/* Responsive Overrides */
 @media (max-width: 900px) {
     .contact-container {
         flex-direction: column;
         padding: 30px;
     }
-    
     .contact-info {
         text-align: center;
         margin-bottom: 20px;
     }
-    
     .method-item {
         justify-content: center;
     }
-    
     .submit-btn {
         align-self: center;
         width: 100%;
     }
-    
     .footer-content {
         flex-direction: column;
         text-align: center;
