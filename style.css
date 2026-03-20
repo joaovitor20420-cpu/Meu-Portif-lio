@@ -525,12 +525,24 @@ input:checked + .slider:before { transform: translateX(26px); }
 .about-photo-wrapper {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     aspect-ratio: 3 / 4;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    overflow: visible;
+    border: 2px solid var(--primary-color);
     margin-left: auto;
+    transform: rotate(-5deg);
+    box-shadow:
+        0 0 15px rgba(0, 255, 204, 0.25),
+        0 0 40px rgba(0, 255, 204, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.about-photo-wrapper:hover {
+    transform: rotate(-2deg) scale(1.03);
+    box-shadow:
+        0 0 25px rgba(0, 255, 204, 0.4),
+        0 0 60px rgba(0, 255, 204, 0.15);
 }
 
 .about-photo-wrapper img {
@@ -538,13 +550,13 @@ input:checked + .slider:before { transform: translateX(26px); }
     height: 100%;
     object-fit: cover;
     object-position: center top;
+    border-radius: 6px;
     filter: brightness(0.85) contrast(1.1) grayscale(0.2);
     transition: all 0.5s ease;
 }
 
 .about-photo-wrapper:hover img {
     filter: brightness(1) contrast(1.1) grayscale(0);
-    transform: scale(1.03);
 }
 
 /* ============================================= */
@@ -759,6 +771,19 @@ body.light-mode {
 .light-mode .nav-cta-btn {
     color: #ffffff !important;
     box-shadow: 0 0 15px rgba(2, 163, 130, 0.3);
+}
+
+.light-mode .about-photo-wrapper {
+    border-color: var(--primary-color);
+    box-shadow:
+        0 0 15px rgba(2, 163, 130, 0.2),
+        0 0 40px rgba(2, 163, 130, 0.08);
+}
+
+.light-mode .about-photo-wrapper:hover {
+    box-shadow:
+        0 0 25px rgba(2, 163, 130, 0.35),
+        0 0 60px rgba(2, 163, 130, 0.12);
 }
 
 .light-mode .about-photo-wrapper img {

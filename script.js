@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "subtitle": "Vamos trabalhar juntos!",
         "description": "Sinta-se à vontade para entrar em contato comigo caso tenha alguma oportunidade, ideia de projeto ou apenas queira dizer olá!",
         "form": {
-            "name": "Seu Nome",
+            "firstname": "Primeiro Nome",
+            "lastname": "Último Nome",
             "email": "Seu Email",
             "message": "Sua Mensagem",
             "button": "INICIAR PROTOCOLO →"
@@ -116,7 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "subtitle": "Let's work together!",
         "description": "Feel free to reach out to me if you have any opportunities, project ideas, or just want to say hello!",
         "form": {
-            "name": "Your Name",
+            "firstname": "First Name",
+            "lastname": "Last Name",
             "email": "Your Email",
             "message": "Your Message",
             "button": "START PROTOCOL →"
