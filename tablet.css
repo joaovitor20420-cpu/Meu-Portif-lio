@@ -1,10 +1,7 @@
 @media (max-width: 1280px) and (min-width: 1080px) {
-    /* Navbar Adjustment */
+    /* Navbar */
     .nav-bar-container {
-        justify-content: flex-end;
         padding: 20px 40px;
-        background-color: transparent;
-        box-shadow: none;
     }
 
     .hamburger-btn {
@@ -30,9 +27,9 @@
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: -50%;
-        width: 40%;
-        background-color: rgba(0, 0, 0, 0.95);
+        right: -45%;
+        width: 45%;
+        background-color: rgba(10, 15, 26, 0.95);
         height: 100vh;
         justify-content: flex-start !important;
         align-items: flex-start;
@@ -40,132 +37,72 @@
         padding-left: 40px;
         z-index: 15;
         transition: right 0.4s ease-in-out;
+        backdrop-filter: blur(15px);
     }
 
-    .menu-checkbox:checked ~ .nav-links {
-        right: 0;
+    .light-mode .nav-links {
+        background-color: rgba(244, 246, 248, 0.95);
     }
+
+    .menu-checkbox:checked ~ .nav-links { right: 0; }
 
     .menu-checkbox:checked ~ .hamburger-btn span:nth-child(1) {
         transform: translateY(7.5px) rotate(45deg);
     }
-
-    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(2) {
-        opacity: 0;
-    }
-
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(2) { opacity: 0; }
     .menu-checkbox:checked ~ .hamburger-btn span:nth-child(3) {
         transform: translateY(-7.5px) rotate(-45deg);
     }
 
-    .nav-bar-container ul li {
-        margin: 20px 0;
-        font-size: 1.2rem;
+    .nav-bar-container ul li { margin: 20px 0; font-size: 1.1rem; }
+
+    .nav-cta-wrapper { margin-left: 0; margin-top: 15px; }
+
+    /* Hero */
+    .showcase-container {
+        padding: 120px 60px 80px;
     }
 
-    .hide-mobile {
-        display: none;
+    .hero-heading {
+        font-size: clamp(2.5rem, 6vw, 4rem);
     }
 
-    /* Showcase */
-    .showcase-container h1 {
-        font-size: 48px;
-        text-align: center;
-        padding: 0 20px;
+    /* About */
+    .about-layout {
+        gap: 50px;
     }
 
-    .showcase-container p {
-        font-size: 20px;
-        text-align: center;
-        padding: 0 30px;
+    .about-photo-wrapper {
+        max-width: 320px;
     }
 
-    .showcase-avatar {
-        height: 45vh;
-        margin-top: 50px;
+    .about-title { font-size: 1.9rem; }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
-    /* About Me */
-    .about-me-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .img-tech-wrapper {
-        width: 300px;
-        height: 300px;
-        margin-bottom: 40px;
-    }
-
-    .about-me-text {
-        width: 90%;
-    }
-
-    .about-me-block {
-        margin-left: 0;
-        margin-top: 20px;
-        border-left: none;
-        border-top: 2px dashed rgba(0, 255, 204, 0.2);
-        padding-top: 20px;
-        text-align: center;
-    }
-
-    .about-me-block:hover {
-        border-top: 2px solid #00ffcc;
-        border-left: none;
-        transform: translateY(-5px);
+    .project-card-featured {
+        grid-row: auto;
     }
 
     /* Skills */
-    .skills-container {
-        grid-template-columns: repeat(2, 1fr);
+    .skills-strip {
         gap: 25px;
-        padding: 0 40px;
     }
 
-    /* Projects */
-    .projects-carousel-wrapper {
-        padding: 0 40px;
-    }
-
-    .project-item {
-        width: 280px;
-        height: 400px;
-    }
-
-    /* Contact Section Tablet */
+    /* Contact */
     .contact-container {
-        flex-direction: row;
-        padding: 40px;
-        gap: 30px;
         max-width: 90%;
-    }
-
-    .contact-info p {
-        display: block;
-        font-size: 1rem;
-    }
-
-    .method-item {
-        display: flex;
-    }
-
-    .input-group input,
-    .input-group textarea {
-        padding: 12px;
-        font-size: 0.95rem;
-    }
-
-    .input-group textarea {
-        height: 120px;
-    }
-
-    .submit-btn {
-        padding: 12px;
-        font-size: 1rem;
+        padding: 40px;
     }
 
     /* Footer */
+    .footer {
+        padding: 25px 40px;
+    }
+
     .footer-content {
         flex-direction: row;
         justify-content: space-between;

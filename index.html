@@ -45,131 +45,152 @@
             <li><a href="#habilidades" class="nav-item" data-i18n="nav-item.habilidades">Habilidades</a></li>
             <li><a href="#projetos" class="nav-item" data-i18n="nav-item.projetos">Projetos</a></li>
             <li><a href="#contato" class="nav-item" data-i18n="nav-item.contato">Contato</a></li>
+            <li class="nav-cta-wrapper">
+                <a href="#contato" class="nav-cta-btn" data-i18n="nav-item.hire">Hire me</a>
+            </li>
         </ul>
     </nav>
+
     <div id="home" class="showcase-container">
-        <h1 id="text">
-            <code>&lt;Oi, eu sou João/&gt;</code>
-        </h1>
+        <div class="hero-content">
+            <h1 id="text" class="hero-heading" data-i18n="hero.heading">CONSTRUINDO<br>FUTUROS <span class="hero-highlight">DIGITAIS.</span></h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Arquiteto de sistemas digitais de alto desempenho, interfaces modernas e experiências digitais de alto nível.</p>
+            <a href="#projetos" class="hero-cta">
+                <span data-i18n="hero.cta">VER PORTFÓLIO</span>
+                <span class="hero-cta-arrow">→</span>
+            </a>
+        </div>
         <p class="typing-text">
             <span class="typewriter"></span>
         </p>
-        <div class="social-links showcase-socials">
-            <a href="https://www.linkedin.com/in/joão-vasconcelos-b96092280" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
-            <a href="https://github.com/joaovitor20420-cpu" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/github.svg" alt="GitHub" class="social-icon"></a>
-            <a href="https://wa.me/5531992692459" target="_blank" rel="noopener noreferrer" class="social-btn"><img src="images/whatsapp.svg" alt="WhatsApp" class="social-icon"></a>
-            <a href="#contato" class="social-btn"><img src="images/email.svg" alt="Email" class="social-icon"></a>
-        </div>
     </div>
-    <div id="sobre" class="section-container">
+
+    <div id="sobre" class="section-container section-bordered">
         <div class="section-content">
-            <h2 class="section-title hidden" data-i18n="section-titles.sobre">Sobre mim</h2>
-            <div class="about-me-container">
-                <div class="about-me-image hidden from-left">
-                    <div class="img-tech-wrapper">
+            <div class="about-layout">
+                <div class="about-left hidden from-left">
+                    <span class="section-label" data-i18n="about.label">// SOBRE MIM</span>
+                    <h2 class="about-title" data-i18n="about.title">A Engenharia por trás do Código</h2>
+                    <p id="about-me-text" class="about-description" data-i18n="about-me-text">
+                        Desenvolvedor apaixonado por criar <strong>interfaces modernas e interativas</strong>, transformando ideias complexas em <strong>experiências digitais intuitivas</strong>. Sempre buscando o equilíbrio perfeito entre <strong>design e código limpo</strong>.
+
+                        Minha especialidade é o <strong>desenvolvimento Front-end</strong>, utilizando tecnologias e metodologias atuais para garantir <strong>performance</strong>, <strong>responsividade</strong> e <strong>acessibilidade</strong> em cada projeto construído.
+
+                        Continuamente aprendendo e explorando novas tendências da área de tecnologia, como <strong>animação</strong>, <strong>design de componentes</strong> e <strong>arquiteturas escaláveis</strong>.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label" data-i18n="about.stat1">Anos de experiência</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">42</span>
+                            <span class="stat-label" data-i18n="about.stat2">Projetos entregues</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right hidden from-right">
+                    <div class="about-photo-wrapper">
                         <img src="images/Gemini_Generated_Image_xqdsw2xqdsw2xqds.png" alt="João Vitor">
                     </div>
                 </div>
-                <div class="about-me-text">
-                    <div class="about-me-block hidden from-right">
-                        <span class="code-bracket">&lt;</span>
-                        <p id="about-me-text" data-i18n="about-me-text">
-                            Desenvolvedor apaixonado por criar <strong>interfaces modernas e interativas</strong>, transformando ideias complexas em <strong>experiências digitais intuitivas</strong>. Sempre buscando o equilíbrio perfeito entre <strong>design e código limpo</strong>.
-                        
-                       
-                            Minha especialidade é o <strong>desenvolvimento Front-end</strong>, utilizando tecnologias e metodologias atuais para garantir <strong>performance</strong>, <strong>responsividade</strong> e <strong>acessibilidade</strong> em cada projeto construído.
-                        
-                        
-                            Continuamente aprendendo e explorando novas tendências da área de tecnologia, como <strong>animação</strong>, <strong>design de componentes</strong> e <strong>arquiteturas escaláveis</strong>.
-                        </p>
-                        <span class="code-bracket">/&gt;</span>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div id="habilidades" class="section-container">
+
+    <div id="projetos" class="section-container section-bordered">
         <div class="section-content">
-            <h2 class="section-title hidden" data-i18n="section-titles.habilidades">Habilidades</h2>
-                <div class="skills-container">
-                    <div class="skill-item hidden">
-                        <img src="images/HTML ICON.svg" alt="HTML">
-                        <span>HTML</span>
-                        <p data-i18n="skills.html">Linguagem responsável por definir o esqueleto de sites. Possuo amplo domínio.</p>
+            <span class="section-label hidden" data-i18n="projects.label">// PROJETOS</span>
+            <h2 class="section-title hidden" data-i18n="section-titles.projetos">Sistemas em Operação</h2>
+            <div class="projects-grid">
+                <div class="project-card project-card-featured hidden">
+                    <div class="project-card-image">
+                        <img src="images/HTML ICON.svg" alt="Project 1">
+                        <span class="project-card-tag">CyberDashboard</span>
                     </div>
-                    <div class="skill-item hidden">
-                        <img src="images/CSS ICON.svg" alt="CSS">
-                        <span>CSS</span>
-                        <p data-i18n="skills.css">
-                            Linguagem responsável por definir o estilo dos sites. Possuo amplo domínio.</p>
-                    </div>
-                    <div class="skill-item hidden">
-                        <img src="images/JS ICON.svg" alt="JS">
-                        <span>JAVASCRIPT</span>
-                        <p data-i18n="skills.js">Linguagem responsável por adicionar lógica aos sites. Possuo amplo domínio</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="projetos" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title hidden" data-i18n="section-titles.projetos">Projetos</h2>
-            <div class="projects-carousel-wrapper">
-                <div class="projects-container">
-                    <div class="project-item hidden">
-                        <img src="images/HTML ICON.svg" alt="HTML">
-                        <span data-i18n="projects.0.title">Projeto 1</span>
+                    <div class="project-card-info">
+                        <h3 data-i18n="projects.0.title">NEURAL_SHIELD V2</h3>
                         <p data-i18n="projects.0.desc">Descrição curta do projeto focada em HTML. Construído com semântica.</p>
                     </div>
                 </div>
+                <div class="project-card hidden">
+                    <div class="project-card-image">
+                        <img src="images/CSS ICON.svg" alt="Project 2">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 data-i18n="projects.1.title">Projeto 2</h3>
+                        <p data-i18n="projects.1.desc">Descrição focada em estilização com CSS, demonstração de layouts complexos.</p>
+                    </div>
+                </div>
+                <div class="project-card hidden">
+                    <div class="project-card-image">
+                        <img src="images/JS ICON.svg" alt="Project 3">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 data-i18n="projects.2.title">Projeto 3</h3>
+                        <p data-i18n="projects.2.desc">Uma aplicação robusta de Javascript provando interatividade real-time e assíncrona.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div id="contato" class="section-container">
+
+    <div id="habilidades" class="section-container section-bordered">
         <div class="section-content">
-            <h2 class="section-title hidden" data-i18n="section-titles.contato">Contato</h2>
-            <div class="contact-container hidden">
-                <div class="contact-info">
-                    <h3 data-i18n="contact.subtitle">Vamos trabalhar juntos!</h3>
-                    <p data-i18n="contact.description">Sinta-se à vontade para entrar em contato comigo caso tenha alguma oportunidade, ideia de projeto ou apenas queira dizer olá!</p>
-                    <div class="contact-methods">
-                        <div class="method-item">
-                            <img src="images/gmail-color.svg" alt="Email" class="method-icon color-icon">
-                            <span>joaovitor20420@gmail.com</span>
-                        </div>
-                        <div class="method-item">
-                            <img src="images/whatsapp-color.svg" alt="WhatsApp" class="method-icon color-icon">
-                            <span>(31) 99269-2459</span>
-                        </div>
-                    </div>
+            <span class="section-label hidden" data-i18n="skills.label">// TECNOLOGIAS</span>
+            <h2 class="section-title hidden" data-i18n="section-titles.habilidades">Ferramentas de Construção</h2>
+            <div class="skills-strip">
+                <div class="skill-chip hidden">
+                    <img src="images/HTML ICON.svg" alt="HTML">
+                    <span>HTML</span>
                 </div>
+                <div class="skill-chip hidden">
+                    <img src="images/CSS ICON.svg" alt="CSS">
+                    <span>CSS</span>
+                </div>
+                <div class="skill-chip hidden">
+                    <img src="images/JS ICON.svg" alt="JS">
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contato" class="section-container section-bordered">
+        <div class="section-content">
+            <span class="section-label hidden" data-i18n="contact.label">// CONTATO</span>
+            <h2 class="section-title hidden" data-i18n="section-titles.contato">Iniciar Nova Conexão</h2>
+            <div class="contact-container hidden">
                 <form class="contact-form" action="https://formsubmit.co/joaovitor20420@gmail.com" method="POST">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="Novo contato do Portfólio!">
-                    <div class="input-group">
-                        <input type="text" id="name" name="name" required placeholder=" ">
-                        <label for="name" data-i18n="contact.form.name">Seu Nome</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" id="email" name="email" required placeholder=" ">
-                        <label for="email" data-i18n="contact.form.email">Seu Email</label>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name" data-i18n="contact.form.name">Seu Nome</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email" data-i18n="contact.form.email">Seu Email</label>
+                        </div>
                     </div>
                     <div class="input-group">
                         <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                         <label for="message" data-i18n="contact.form.message">Sua Mensagem</label>
                     </div>
-                    <button type="submit" class="submit-btn" data-i18n="contact.form.button">Enviar Mensagem</button>
+                    <button type="submit" class="submit-btn" data-i18n="contact.form.button">INICIAR PROTOCOLO →</button>
                 </form>
             </div>
         </div>
     </div>
+
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2026 João. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/in/joão-vasconcelos-b96092280" target="_blank" rel="noopener noreferrer"><img src="images/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
                 <a href="https://github.com/joaovitor20420-cpu" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" alt="GitHub" class="social-icon"></a>
+                <a href="https://wa.me/5531992692459" target="_blank" rel="noopener noreferrer"><img src="images/whatsapp.svg" alt="WhatsApp" class="social-icon"></a>
             </div>
         </div>
     </footer>
